@@ -1,0 +1,52 @@
+{
+    "news": {
+        "category": [
+            "Events",
+            "Business",
+            "Company",
+            "Education",
+            "F&B",
+            "Entertainment",
+            "Market",
+            "Ecommerce"
+        ],
+        "list": [
+            {
+                "slug": "newsDetail",
+                "image": "/images/news-1.webp",
+                "category": "Events",
+                "title": "Optimal Audio appoints Duc Pro Audio as distributor for Vietnam."
+            },
+            {
+                "slug": "arena-mix-brings-martin-audio-cdd-magic-to-ho-chi-minh-city",
+                "image": "/images/news-2.webp",
+                "category": "Events",
+                "title": "Arena Mix brings Martin Audio CDD magic to Ho Chi Minh City."
+            },
+            {
+                "slug": "optimal-audio-appoints-duc-pro-audio-as-distributor-for-vietnam",
+                "image": "/images/news-3.webp",
+                "category": "Events",
+                "title": "Optimal Audio appoints Duc Pro Audio as distributor for Vietnam."
+            },
+            {
+                "slug": "optimal-audio-appoints-duc-pro-audio-as-distributor-for-vietnam",
+                "image": "/images/news-4.webp",
+                "category": "Events",
+                "title": "Optimal Audio appoints Duc Pro Audio as distributor for Vietnam."
+            },
+            {
+                "slug": "optimal-audio-appoints-duc-pro-audio-as-distributor-for-vietnam",
+                "image": "/images/news-5.webp",
+                "category": "Events",
+                "title": "Optimal Audio appoints Duc Pro Audio as distributor for Vietnam."
+            },
+            {
+                "slug": "optimal-audio-appoints-duc-pro-audio-as-distributor-for-vietnam",
+                "image": "/images/news-6.webp",
+                "category": "Events",
+                "title": "Optimal Audio appoints Duc Pro Audio as distributor for Vietnam."
+            }
+        ]
+    }
+}

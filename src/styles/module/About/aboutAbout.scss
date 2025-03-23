@@ -1,0 +1,61 @@
+@use '../../abstracts/mixins' as *;
+@use '../../abstracts/colors' as *;
+
+.abt-about {
+    position: relative;
+    contain: paint;
+
+    background-color: var(--cl-black);
+    color: var(--cl-white);
+
+    padding-block: 0rem 36rem;
+
+    &-img {
+        grid-column: 1/-1;
+
+        margin-inline: calc(var(--container-padding) * -1);
+
+        aspect-ratio: 1.8782608696;
+    }
+
+    &-desc {
+        grid-column: 1/-1;
+
+        margin-block: 8rem 10rem;
+
+        .spacer {
+            display: inline-block;
+            width: 8%;
+        }
+    }
+
+    &-archieve {
+        grid-column: 7/-1;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: var(--grid-gap);
+        row-gap: 8rem;
+
+        &-item {
+            position: relative;
+
+            padding-top: 6rem;
+
+            &-count {
+
+            }
+
+            &-desc {
+                margin-top: 2.4rem;
+
+                opacity: .7;
+            }
+
+            .line {
+                top: 0;
+                opacity: .2;
+            }
+        }
+    }
+}

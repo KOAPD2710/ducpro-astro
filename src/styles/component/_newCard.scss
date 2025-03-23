@@ -1,0 +1,36 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/colors' as *;
+
+
+.newCard {
+
+    @include hover {
+        [data-newcard=img] img{
+            transform: scale(1.05);
+            transition-timing-function: var(--quart-out);
+        }
+    }
+
+    &_img {
+        width: 100%;
+        aspect-ratio: 1.0311688312;
+
+        margin-bottom: 2rem;
+
+        overflow: hidden;
+
+        img {
+            transition: transform .3s var(--expo-out);
+        }
+    }
+
+    &_category {
+        margin-bottom: 1.2rem;
+
+        opacity: .5;
+    }
+
+    &_title {
+        margin-bottom: 2rem;
+    }
+}

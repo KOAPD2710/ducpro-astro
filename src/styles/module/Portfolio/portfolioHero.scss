@@ -1,0 +1,60 @@
+@use '../../abstracts/mixins' as *;
+@use '../../abstracts/colors' as *;
+
+.port-hero {
+    position: relative;
+    z-index: -1;
+
+    &-title {
+        grid-column: 3/11;
+        
+        position: relative;
+        z-index: 2;
+
+        text-align: center;
+
+        margin-block: 30rem;
+    }
+
+    &-imgTrain {
+        position: absolute;
+        z-index: 3;
+        top: 0;
+        left: 0;
+
+        @include size(100%, 200%);
+
+        pointer-events: none;
+
+        contain: paint;
+
+        &-item {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            @include size(20rem, 24rem);
+
+            opacity: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img {
+                height: 100%;
+            }
+        }
+    }
+
+    &-label {
+        grid-column: 6/-1;
+
+        margin-bottom: 1.6rem;
+    }
+
+    &-desc {
+        grid-column: 6/-1;
+        margin-bottom: 15rem;
+    }
+}

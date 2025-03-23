@@ -1,0 +1,45 @@
+@use '../../abstracts/mixins' as *;
+@use '../../abstracts/colors' as *;
+
+
+.abt-hero {
+    position: relative;
+    contain: paint;
+
+    &-title {
+        grid-column: 6/-1;
+
+        margin-block: 20rem 10rem;
+    }
+
+    &-label {
+        grid-column: 1/3;
+    }
+
+    &-desc {
+        grid-column: 6/10;
+
+        margin-bottom: 15rem;
+
+        opacity: .7;
+    }
+
+    &-img {
+        align-self: end;
+
+        grid-column: 1/3;
+        grid-row: 1/2;
+
+        display: grid;
+        // @include size(fit-content);
+        @include size(18.8rem, 25.5rem);
+
+        margin-block: 20rem 10rem;
+
+
+        &-inner {
+            grid-column: 1/2;
+            grid-row: 1/2;
+        }
+    }
+}

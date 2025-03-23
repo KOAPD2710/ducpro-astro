@@ -1,0 +1,127 @@
+@use '../../abstracts/mixins' as *;
+@use '../../abstracts/colors' as *;
+
+.home-port {
+    contain: paint;
+
+    padding-block: 5rem;
+
+    &-label {
+        width: fit-content;
+    }
+
+    &-title {
+        grid-column: 5/11;
+    }
+
+    &-cta {
+        grid-column: 11/-1;
+
+        justify-self: end;
+
+        margin-top: 1.6rem;
+    }
+
+    &-list {
+        grid-column: 1/-1;
+
+        margin-top: 8rem;
+
+        &-type {
+            margin-bottom: 4rem;
+        }
+
+        &-main {}
+
+        .item {
+
+            &-client {
+                grid-column: 1/5;
+            }
+
+            &-scope {
+                grid-column: 5/8;
+
+                display: flex;
+                column-gap: 2rem;
+
+                opacity: 0;
+            }
+
+            &-type {
+                grid-column: 9/11;
+            }
+
+            &-location {
+                grid-column: 11/12;
+            }
+        }
+
+        &-type {
+            opacity: .4;
+        }
+
+        &-item {
+            position: relative;
+
+            align-items: center;
+            
+            padding-block: 1.5rem;
+
+            &_scope {
+                opacity: 0 !important;
+                transition: opacity .0s ease-out;
+            }
+
+            &_line {
+                // opacity: .4;
+                top: unset;
+                bottom: 0;
+                
+                transform: scaleX(0);
+                transform-origin: left;
+
+                transition: transform .75s ease-out;
+                // height: 10px;
+            }
+
+            &_arrow {
+                opacity: 0;
+
+                transition: opacity .0s ease-out;
+            }
+
+            @include hover {
+                .home-port-list-item_scope {
+                    opacity: .6 !important;
+
+                    transition: opacity .0s ease-in;
+                }
+                .home-port-list-item_line {
+                    transform: scaleX(1);
+
+                    transition: transform .0s ease-out;
+                }
+
+                .home-port-list-item_arrow {
+                    opacity: 1;
+
+                    transition: transform .0s ease-out;
+
+                }
+            }
+        }
+    }
+
+    &-img {
+        grid-column: 1/-1;
+        
+        // height: 90rem;
+        aspect-ratio: 1.9211111111;
+        
+        margin-inline: calc(var(--container-padding) * -1);
+        margin-top: 6rem;
+
+        overflow: hidden;
+    }
+}

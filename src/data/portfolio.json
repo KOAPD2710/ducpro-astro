@@ -1,0 +1,163 @@
+{
+    "portfolio": [
+        {   
+            "slug": "portfolioDetail",
+			"client": "The Gangs Central",
+			"scope": [
+				"Audio",
+				"Visual",
+				"Lighting"
+			],
+			"type": "Bar",
+			"location": "HCMC",
+			"thumbnail": "/images/portfolio.webp",
+            "image" : [
+                "/images/portfolio-1.webp",
+                "/images/portfolio-2.webp",
+                "/images/portfolio-3.webp",
+                "/images/portfolio-4.webp",
+                "/images/sp-img.jpg"
+            ],
+			"introduction": "Muzik Park Live Music is an exciting venue that showcases a diverse range of live performances, featuring both local and international artists. With a vibrant atmosphere and state-of-the-art sound systems, it attracts music lovers of all genres.",
+			"service": "Audio, Visual, Lighting",
+			"system": [
+				{
+					
+				}
+			]
+		},
+        {   
+            "slug": "portfolioDetail",
+			"client": "Zheng Lounge",
+			"scope": [
+				"Audio",
+				"Visual",
+				"Lighting"
+			],
+			"type": "Bar",
+			"location": "HCMC",
+			"thumbnail": "/test/1 (1).webp",
+            "image" : [
+                "/images/portfolio-1.webp",
+                "/images/portfolio-2.webp",
+                "/images/portfolio-3.webp",
+                "/images/portfolio-4.webp",
+                "/images/sp-img.jpg"
+            ]
+		},
+        {   
+            "slug": "portfolioDetail",
+			"client": "The Gangs Central",
+			"scope": [
+				"Audio",
+				"Visual",
+				"Lighting"
+			],
+			"type": "Bar",
+			"location": "HCMC",
+			"thumbnail": "/images/portfolio.webp",
+            "image" : [
+                "/images/portfolio-1.webp",
+                "/images/portfolio-2.webp",
+                "/images/portfolio-3.webp",
+                "/images/portfolio-4.webp",
+                "/images/sp-img.jpg"
+            ]
+		},
+        {   
+            "slug": "portfolioDetail",
+			"client": "The Gangs Central",
+			"scope": [
+				"Audio",
+				"Visual",
+				"Lighting"
+			],
+			"type": "Bar",
+			"location": "HCMC",
+			"thumbnail": "/images/portfolio.webp",
+            "image" : [
+                "/images/portfolio-1.webp",
+                "/images/portfolio-2.webp",
+                "/images/portfolio-3.webp",
+                "/images/portfolio-4.webp",
+                "/images/sp-img.jpg"
+            ]
+		},
+        {   
+            "slug": "portfolioDetail",
+			"client": "The Gangs Central",
+			"scope": [
+				"Audio",
+				"Visual",
+				"Lighting"
+			],
+			"type": "Bar",
+			"location": "HCMC",
+			"thumbnail": "/images/portfolio.webp",
+            "image" : [
+                "/images/portfolio-1.webp",
+                "/images/portfolio-2.webp",
+                "/images/portfolio-3.webp",
+                "/images/portfolio-4.webp",
+                "/images/sp-img.jpg"
+            ]
+		},
+        {   
+            "slug": "portfolioDetail",
+			"client": "The Gangs Central",
+			"scope": [
+				"Audio",
+				"Visual",
+				"Lighting"
+			],
+			"type": "Bar",
+			"location": "HCMC",
+			"thumbnail": "/images/portfolio.webp",
+            "image" : [
+                "/images/portfolio-1.webp",
+                "/images/portfolio-2.webp",
+                "/images/portfolio-3.webp",
+                "/images/portfolio-4.webp",
+                "/images/sp-img.jpg"
+            ]
+		},
+        {   
+            "slug": "portfolioDetail",
+			"client": "The Gangs Central",
+			"scope": [
+				"Audio",
+				"Visual",
+				"Lighting"
+			],
+			"type": "Bar",
+			"location": "HCMC",
+			"thumbnail": "/images/portfolio.webp",
+            "image" : [
+                "/images/portfolio-1.webp",
+                "/images/portfolio-2.webp",
+                "/images/portfolio-3.webp",
+                "/images/portfolio-4.webp",
+                "/images/sp-img.jpg"
+            ]
+		},
+        {   
+            "slug": "portfolioDetail",
+			"client": "The Gangs Central",
+			"scope": [
+				"Audio",
+				"Visual",
+				"Lighting"
+			],
+			"type": "Bar",
+			"location": "HCMC",
+			"thumbnail": "/images/portfolio.webp",
+            "image" : [
+                "/images/portfolio-1.webp",
+                "/images/portfolio-2.webp",
+                "/images/portfolio-3.webp",
+                "/images/portfolio-4.webp",
+                "/images/sp-img.jpg"
+            ]
+		}
+    ]
+}

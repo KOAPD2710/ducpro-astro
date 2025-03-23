@@ -1,0 +1,16 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/colors' as *;
+
+
+.line {
+    position: absolute;
+    background-color: currentColor;
+
+    &-hor {
+        @include size(100%, 1px);
+    }
+
+    &-ver {
+        @include size(1px, 100%);
+    }
+}

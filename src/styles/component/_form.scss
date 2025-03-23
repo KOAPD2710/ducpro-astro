@@ -1,0 +1,13 @@
+
+
+form {
+    ::placeholder {
+        color: rgba(29, 29, 29, 0.50);
+    }
+
+    input {
+        &:is(:-webkit-autofill, :autofill), &:-internal-autofill-selected, &:-internal-autofill-previewed {
+            -webkit-box-shadow: 0 0 0px 40rem var(--cl-white) inset;
+        }
+    }
+}

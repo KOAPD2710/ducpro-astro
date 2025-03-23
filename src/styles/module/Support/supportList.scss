@@ -1,0 +1,9 @@
+@use '../../abstracts/mixins' as *;
+@use '../../abstracts/colors' as *;
+
+.support-list {
+    position: relative;
+    contain: paint;
+
+    
+}

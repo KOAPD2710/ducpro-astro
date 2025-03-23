@@ -1,0 +1,176 @@
+@use '../../abstracts/mixins' as *;
+@use '../../abstracts/colors' as *;
+
+
+.home-hero {
+    position: relative;
+    contain: paint;
+    height: 100svh;
+
+    color: $cl-white;
+
+    
+    
+    .container.grid {
+        grid-template-rows: 1fr auto auto;
+
+        position: relative;
+        height: 100%;
+        
+        padding-block: 0rem 4rem;
+
+        > * {
+            position: relative;
+            z-index: 2;
+        }
+    }
+
+    &-bg {
+        position: absolute !important;
+        z-index: 1 !important;
+        top: 0;
+        left: 0;
+        
+        @include size(100%, 100%);
+        
+        background-color: var(--cl-black);
+        
+        &-inner {
+            @include size(100%, 100%);
+        }
+    }
+
+    &-label {
+        flex-shrink: 0;
+
+        margin-right: 3rem;
+
+        &-wrapper {
+            grid-column: 1/5;
+            grid-row: 2/3;
+
+            display: flex;
+            align-items: center;
+
+            height: fit-content;
+
+            margin-top: 1.8rem;
+        }
+
+        &-line {
+            position: static;
+        }
+    }
+
+    &-title {
+        grid-column: 5/11;
+        grid-row: 2/3;
+        height: fit-content;
+
+        // mix-blend-mode: difference;
+    }
+
+    &-desc {
+        grid-column: 5/8;
+        grid-row: 3/4;
+
+        margin-top: 4rem;
+    }
+
+    &-hint {
+        grid-row: 3/4;
+
+        position: relative;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include size(2.4rem, 6rem);
+
+        border-radius: 100vmax;
+
+        cursor: pointer;
+
+        &::before {
+            content: "";
+            
+            position: absolute;
+            top: 0;
+            left: 0;
+            
+            display: block;
+            @include size(100%);
+            background-color: currentColor;
+
+            border-radius: inherit;
+            opacity: .15;
+        }
+
+        &-inner {
+            position: relative;
+            display: grid;
+            justify-items: center;
+            align-items: center;
+
+            padding-block: 1.4rem;
+
+            overflow: hidden;
+        }
+
+        &-ic {
+            width: 0.73rem;
+            animation: loopArrow 3s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+
+            &:nth-child(2) {
+                position: absolute;
+                bottom: 100%;
+            }
+        
+            @keyframes loopArrow {
+                0% {
+                    transform: translateY(0%);
+                }
+                33.33% {
+                    transform: translateY(calc(100% + 1.45rem));
+                }
+                100% {
+                    transform: translateY(calc(100% + 1.45rem));
+                }
+            }
+        }
+    }
+
+    &-social {
+        grid-column: 12/-1;
+        grid-row: 3/4;
+
+        position: relative;
+
+        @include size(6rem);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        justify-self: end;
+
+        &-inner {
+            width: 1.2rem;
+        }
+    }
+
+    &-overlay {
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        @include size(100%);
+        background-color: var(--cl-black);
+        z-index: 1000 !important;
+
+        opacity: 0;
+
+        pointer-events: none;
+        user-select: none;
+    }
+}

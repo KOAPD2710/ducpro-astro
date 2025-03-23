@@ -1,0 +1,69 @@
+<div class="grid-debug">
+    <div class="container grid">
+        {Array.from({ length: 12 }).map((_, i) => (
+            <div class="grid-debug__inner"/>
+        ))}
+    </div>
+</div>
+
+<style is:global lang="scss">
+    .grid-debug {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100svh;
+        contain: paint;
+        z-index: 999999999;
+        pointer-events: none;
+        user-select: none;
+        opacity: .1;
+        display: none;
+
+        &.active {
+            display: block;
+        }
+
+        .container {
+            height: 100%;
+        }
+
+        &__inner {
+            background-color: gainsboro;
+        }
+    }
+</style>
+
+<script>
+    import $ from 'jquery';
+
+    const gridDebugger = $(document).find('.grid-debug');
+
+    const updateGridVisibilityUI = (isVisible: boolean) => {
+        if (isVisible) {
+            gridDebugger.addClass('active')
+        } else {
+            gridDebugger.removeClass('active')
+        }
+    };
+    let isGridVisible = localStorage.getItem("isGridShow") === 'true';
+    updateGridVisibilityUI(isGridVisible);
+
+    const toggleGridVisibility = () => {
+        isGridVisible = !isGridVisible;
+        localStorage.setItem("isGridShow", String(isGridVisible));
+        updateGridVisibilityUI(isGridVisible);
+    };
+
+    const handleKeyDown = (event: JQuery.KeyDownEvent) => {
+        if (event.shiftKey && event.key === 'G') {
+            toggleGridVisibility();
+        }
+    };
+
+    $(window).on('keydown', handleKeyDown);
+
+    $(window).on('unload', () => {
+        $(window).off('keydown', handleKeyDown);
+    });
+</script>

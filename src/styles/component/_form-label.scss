@@ -1,0 +1,23 @@
+.label {
+    display: block;
+    height: fit-content;
+    opacity: .5;
+
+    pointer-events: none;
+
+    &_input {
+        display: none;
+    }
+
+    &_txt {
+        width: 100% !important;
+
+        pointer-events: auto;
+        cursor: pointer;
+    }
+
+
+    &:has(input:checked) {
+        opacity: 1;
+    }
+}

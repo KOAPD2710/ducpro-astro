@@ -1,0 +1,68 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/colors' as *;
+
+.productCard {
+    position: relative;
+
+    height: fit-content;
+
+    @include hover {
+        [data-product=translate_wrapper] {
+            opacity: 1;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        aspect-ratio: .9;
+
+        padding: 25% 30%;
+        background-color: var(--cl-grey);
+
+        &__wrapper {
+            position: relative;
+        }
+
+        img {
+            height: 100%;
+        }
+    }
+
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        color: rgba($cl-black, .7);
+
+        margin-bottom: 1rem;
+        
+        &__wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            flex-direction: column;
+
+            padding: 1.6rem;
+        }
+    }
+
+    &__translate {
+        display: flex;
+        justify-content: space-between;
+
+        &__wrapper {
+            flex-grow: 1;
+
+            opacity: 0;
+
+            transition: opacity .3s ease-out;
+        }
+    }
+
+    &__name {
+        margin-top: 1.6rem;
+    }
+}

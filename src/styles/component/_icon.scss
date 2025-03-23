@@ -1,0 +1,11 @@
+@use '../abstracts/mixins' as *;
+
+.ic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &-20 {
+        @include size(2rem);
+    }
+}

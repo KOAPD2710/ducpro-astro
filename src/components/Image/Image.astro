@@ -1,0 +1,14 @@
+---
+import { Image as AstroImage } from "astro:assets";
+import cn from "clsx";
+
+const {
+    src,
+    alt,
+    class: imgClass="",
+    lazy = false,
+    ...rest
+} = Astro.props;
+---
+
+<AstroImage src={src || ""} alt={alt || "Image"} class={cn("img", imgClass)} loading={lazy && "lazy"} inferSize={true}/>

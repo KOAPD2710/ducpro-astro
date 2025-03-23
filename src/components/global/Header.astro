@@ -1,0 +1,96 @@
+---
+import headerData from "@/data/header.json";
+import Logo from "/public/svgs/logo.svg";
+
+const { navItems } = headerData.header;
+
+---
+<header class="header">
+    <div class="container grid">
+        <a href="/" class="header-logo">
+            <div class="header-logo-ic ic">
+				<Logo fill="currentColor" />
+            </div>
+        </a>
+        <nav class="header-nav" data-header="navi">
+            <div class="header-nav_list">
+                {navItems.map(item => (
+                    <div
+                        class={`header-nav_list__item ${item.sub ? 'sub' : ''}`}
+                        data-header="navi_item">
+                        <a
+                            href={item.url}
+                            class="header-nav_list__item__link link txt-up txt-14"
+                            data-header="navi_link"
+                            data-barba-prevent
+                            >
+                            {item.title}
+                            {item.sub && (
+                                <>
+                                    [{item.sub.length}]
+                                    <div class="header-nav_list__item__ic ic">
+                                        <div class="header-nav_list__item__ic__inner"/>
+                                        <div class="header-nav_list__item__ic__inner"/>
+                                    </div>
+                                </>
+                            )}
+                        </a>
+                        {item.sub && (
+                            <div class="header-nav_list__item__sub" data-header="navi_menu_sub">
+                                <div class="header-nav_list__item__sub__inner">
+                                    {item.sub.map(sub => (
+                                        <a href={`/product?brand=${sub.category}`}
+                                            class="header-nav_list__item__sub__link link txt-12"
+                                            data-header="navi_menu_sub_link">
+                                            {sub.title}
+                                        </a>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                ))}
+            </div>
+            <div class="header-nav_sub txt-14" data-header="navi_sub">
+                <div class="line line-hor"></div>
+
+                <div class="header-nav_sub_inner">
+                    <div class="header-nav_sub_product" data-header="navi_sub_product">
+                        {navItems.map(item => 
+                            item.sub?.map(sub => (
+                                <a href={`/product?brand=${sub.category}`} 
+                                   class="header-nav_sub_product_item link" 
+                                   data-header="navi_sub_item">
+                                    {sub.title}
+                                </a>
+                            ))
+                        )}
+                    </div>
+                    <div class="header-nav_sub_partnership" data-header="navi_sub_partnership">
+                        <div class="header-nav_sub_partnership_marquee marquee" data-header="navi_marquee">
+                            <div class="header-nav_sub_partnership_marquee_translate marquee_translate" data-header="navi_marquee_translate">
+                                <div class="header-nav_sub_partnership_marquee_inner txt-up">
+                                    DucPro Audio is proud to partner as the official representative.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-nav_bg" data-header="nav_bg"></div>
+        </nav>
+        <div class="header-localize isVN">
+            <div class="header-localize_txt txt-14 txt-up" data-header="localize_en">en</div>
+            <div class="header-localize_toggle">
+                <div class="header-localize_toggle__inner" data-header="localize_toggle"></div>
+            </div>
+            <div class="header-localize_txt txt-14 txt-up" data-header="localize_vn">vn</div>
+        </div>
+        <a href="/contact" class="header-contact btn btn-stroke txt-up txt-14" data-barba-prevent>Contact</a>
+
+        <button class="header-menu txt-12 txt-up" data-header="menu_btn">
+            <div class="header-menu_bg" data-header="menu_bg"></div>
+            <div class="header-menu_txt">Menu</div>
+        </button>
+    </div>
+</header>

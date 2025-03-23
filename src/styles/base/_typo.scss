@@ -1,0 +1,104 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/breakpoints' as *;
+
+
+html {
+	// Screen 1728px and max at 1920px
+	font-size: min(0.5787037037vw, 11.1111111111px);
+
+
+    // @media screen and (max-width: 1400px) and (min-width: $tablet) {
+    // 	font-size: 0.6666666667vw;
+	// }
+
+	@include md {
+		// Screen 834px
+        font-size: 1.1990407674vw;
+	}
+
+	@include sm {
+		// Screen 393px
+		font-size: 2.5445292621vw;
+	}
+}
+
+html {
+	font-family: var(--font-aeonik);
+}
+
+body {
+	@include text(16);
+}
+
+:root {
+
+    --fs-h02: 14rem;
+    --lh-h02: .9em;
+
+    --fs-h01: 7.2rem;
+    --lh-h01: .9em;
+
+    --fs-h1: 6.4rem;
+    --lh-h1: 1em;
+
+    --fs-h2: 4rem;
+    --lh-h2: 1.1em;
+
+    --fs-h3: 3.6rem;
+    --lh-h3: 1.2em;
+
+    --fs-h4: 3.2rem;
+    --lh-h4: 1.2em;
+
+    --fs-94: 9.4rem;
+    --lh-94: 1em;
+
+    --fs-54: 5.4rem;
+    --lh-54: 1.1em;
+
+    --fs-48: 4.8rem;
+    --lh-48: 1em;
+
+    --fs-32: 3.2rem;
+    --lh-32: 1.1em;
+
+	--fs-28: 2.8rem;
+    --lh-28: 1em;
+
+    --fs-24: 2.4rem;
+    --lh-24: 1.2em;
+
+	--fs-20: 2rem;
+    --lh-20: 1.4em;
+
+	--fs-16: 1.6rem;
+    --lh-16: 1.6em;
+
+    --fs-14: max(1.4rem, 14px);
+    --lh-14: 1em;
+
+	--fs-12: max(1.2rem, 12px);
+    --lh-12: 1em;
+}
+
+$txtSizes: 12, 14, 16, 20, 24, 28, 32, 48, 54, 94;
+
+@for $i from 1 through 2 {
+    h0#{$i}, .h0#{$i} {
+        @include text(h0#{$i});
+    }
+}
+
+@for $i from 1 through 4 {
+    h#{$i}, .h#{$i} {
+        @include text(h#{$i});
+    }
+}
+
+.txt {
+	@each $size in $txtSizes {
+        &-#{$size} {
+            @include text(#{$size});
+        }
+    }
+}

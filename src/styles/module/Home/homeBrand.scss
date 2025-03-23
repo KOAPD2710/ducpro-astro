@@ -1,0 +1,54 @@
+@use '../../abstracts/mixins' as *;
+@use '../../abstracts/colors' as *;
+
+.home-brand {
+    &-title {
+        grid-column: 1/4;
+
+        max-width: 32.1rem;
+    }
+
+    &-logo {
+        grid-column: 5/7;
+
+        position: relative;
+
+        &-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background-color: var(--cl-black);
+
+            color: var(--cl-white);
+
+
+            aspect-ratio: 1;
+
+            position: absolute;
+            right: 0;
+
+            overflow: hidden;
+
+            @for $i from 1 through 10 {
+                &:nth-child(#{$i}) {
+                    filter: brightness(#{$i * 30%});
+                }
+            }
+
+            &-ic {
+                @include size(100%, fit-content);
+
+                margin: 4rem;
+            }
+        }
+    }
+
+    &-list {
+        grid-column: 7/-1;
+
+        display: flex;
+        flex-direction: column;
+        row-gap: 2.4rem;
+    }
+}

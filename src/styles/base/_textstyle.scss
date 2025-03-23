@@ -1,0 +1,33 @@
+.txt {
+    &-light {
+        font-weight: 300;
+    }
+
+    &-reg {
+        font-weight: 400;
+    }
+
+    &-med {
+        font-weight: 500;
+    }
+
+    &-semi {
+        font-weight: 600;
+    }
+
+    &-bold {
+        font-weight: 700;
+    }
+
+    &-up {
+        text-transform: uppercase;
+    }
+
+    &-italic {
+        font-style: italic;
+    }
+
+    &-nor {
+        font-style: normal;
+    }
+}

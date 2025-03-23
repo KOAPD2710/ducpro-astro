@@ -1,0 +1,75 @@
+@use '../../abstracts/mixins' as *;
+@use '../../abstracts/colors' as *;
+
+
+.home-why {
+    position: relative;
+    contain: paint;
+
+    color: var(--cl-white);
+    background-color: var(--cl-black);
+
+    padding-block: 15rem 10rem;
+
+
+    &-label {
+        margin-bottom: 4rem;
+    }
+
+    &-title {
+        grid-column: 1/7;
+    }
+
+    &-main {
+        grid-column: 1/-1;
+
+        display: grid;
+
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: var(--grid-gap);
+
+        margin-top: 8rem;
+    }
+    
+
+    &-item {
+        display: flex;
+        flex-direction: column;
+
+        &-ic {
+
+            align-self: center;
+
+            max-width: 36rem;
+            @include size(fit-content, 24.4rem);
+
+            margin-block: 13rem;
+
+            &-inner {
+                width: 100%;
+                height: 100%;
+
+                svg {
+                    width: auto;
+                    height: 100%;
+                }
+            }
+        }
+
+        &-line {
+            position: static;
+
+            opacity: .2;
+
+            margin-bottom: 2.4rem;
+        }
+
+        &-title {
+            margin-bottom: 2.4rem;
+        }
+
+        &-desc {
+            opacity: .7;
+        }
+    }
+}

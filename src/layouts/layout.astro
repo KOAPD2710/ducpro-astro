@@ -1,0 +1,38 @@
+---
+import "@styles/main.scss";
+import BaseHead from "@components/global/BaseHead.astro";
+import Footer from "@components/global/Footer.astro";
+import Header from "@components/global/Header.astro";
+import Loading from "@components/global/Loading.astro";
+
+import GridDebugger from "@components/debug/GridDebugger.astro";
+
+const {
+	title,
+	data_page,
+    name_space
+} = Astro.props;
+
+---
+
+<html lang="en">
+    <BaseHead title={title} description={data_page?.description || "Default description"} />
+	<body data-barba="wrapper">
+        <Loading/>
+        <Header/>
+        <div class="page-container loading">
+            <main class="main" data-barba="container" data-barba-namespace={name_space || "notSetWillBeSuck"}>
+                <slot />
+                <Footer/>
+                <div class="page-curtain"></div>
+            </main>
+        </div>
+        <GridDebugger/>
+
+        <script>
+			import main from "@/scripts/main.js";
+
+            window.onload = () => main();
+		</script>
+	</body>
+</html>

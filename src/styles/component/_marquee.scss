@@ -1,0 +1,16 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/colors' as *;
+
+.marquee {
+    display: flex;
+    // column-gap: 8rem;
+    
+    @include size(100%);
+    overflow: hidden;
+    
+    &_translate {
+        flex-shrink: 0;
+
+        padding-right: 2rem;
+    }
+}

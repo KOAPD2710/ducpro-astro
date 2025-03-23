@@ -1,0 +1,35 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/colors' as *;
+
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+
+    @include size(100%);
+
+    pointer-events: none;
+    -webkit-user-select: none;
+    user-select: none;
+
+    mix-blend-mode: difference;
+
+
+    &-translate {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include size(0px);
+    }
+
+    &-dot {
+        position: absolute;
+        @include size(1rem);
+
+        border-radius: 100vmax;
+
+        background-color: $cl-white;
+    }
+}

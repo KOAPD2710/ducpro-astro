@@ -1,0 +1,12 @@
+.split {
+    &-line, &-word, &-char {
+        padding: 0.2em;
+        margin: -0.2em;
+
+        contain: paint;
+    }
+
+    &-line:not(:last-child) {
+        margin-bottom: -0.4em;
+    }
+}

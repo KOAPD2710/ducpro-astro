@@ -1,0 +1,12 @@
+@use 'sass:color';
+
+$cl-black: #1B1B1B !default;
+$cl-white: #fff !default;
+$cl-grey: #F6F6F6 !default;
+
+
+:root {
+    --cl-black: #{$cl-black};
+    --cl-white: #{$cl-white};
+    --cl-grey: #{$cl-grey};
+}

@@ -1,0 +1,103 @@
+@use '../../abstracts/mixins' as *;
+@use '../../abstracts/colors' as *;
+
+.abt-career {
+    position: relative;
+    contain: paint;
+
+    padding-block: 10rem;
+
+    &-img {
+        grid-column: 1/-1;
+        margin-inline: calc(var(--container-padding) * -1);
+
+        display: flex;
+
+        height: 55svh;
+
+        margin-bottom: 10rem;
+
+        &-container {
+            display: flex;
+            flex-shrink: 0;
+        }
+
+        &-inner {
+            flex-shrink: 0;
+
+
+            min-width: 33svw;
+            max-width: 50svw;
+        }
+    }
+
+    &-label {
+        grid-column: 1/3;
+    }
+
+    &-title {
+        grid-column: 4/11;
+
+        margin-bottom: 3.2rem;
+    }
+    &-desc {
+        grid-column: 4/8;
+
+        opacity: .8;
+    }
+
+    &-list {
+        grid-column: 1/-1;
+
+        margin-top: 10rem;
+    }
+
+    &-item {
+        position: relative;
+
+        align-items: center;
+
+        padding-block: 2.4rem;
+
+
+        &-name {
+            grid-column: 1/4;
+        }
+
+        &-role {
+            grid-column: 4/6;
+            
+            opacity: .8;
+        }
+
+        &-location {
+            grid-column: 6/8;
+            
+            opacity: .8;
+        }
+
+        &-salary {
+            grid-column: 8/12;
+
+            opacity: .8;
+        }
+        &-period {
+            grid-column: 12/-1;
+
+            opacity: .8;
+        }
+
+        .line {
+            opacity: .2;
+
+            &-top {
+                top: 0;
+            }
+
+            &-bot {
+                bottom: 0;
+            }
+
+        }
+    }
+}

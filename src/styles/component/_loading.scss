@@ -1,0 +1,31 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/colors' as *;
+
+.page-loading {
+    position: fixed;
+    z-index: 100000;
+    top: 0;
+    left: 0;
+
+    @include size(100%);
+    background-color: $cl-black;
+    // opacity: .2;
+
+    // pointer-events: none;
+
+    color: $cl-white;
+
+    .container.grid {
+        height: 100%;
+    }
+
+    &-number {
+        grid-column: 6/8;
+        align-self: center;
+        justify-self: center;
+
+        text-align: center;
+
+        color: var(--cl-white);
+    }
+}

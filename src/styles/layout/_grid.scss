@@ -1,0 +1,33 @@
+@use '../abstracts/breakpoints' as *;
+@use '../abstracts/mixins' as *;
+
+html {
+    --container-padding: 4rem; 
+    --grid-column: 12;
+    --grid-gap: 2rem;
+    --max-width: #{$max_width};
+
+
+    @include sm {
+        --container-padding: 1.6rem; 
+        --grid-column: 4;
+    }
+}
+
+.grid {
+    display: grid;
+    column-gap: var(--grid-gap);
+    grid-template-columns: repeat(var(--grid-column), 1fr);
+    grid-template-rows: auto;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+    max-width: var(--max-width);
+
+    &.fluid {
+        max-width: none;
+    }
+}

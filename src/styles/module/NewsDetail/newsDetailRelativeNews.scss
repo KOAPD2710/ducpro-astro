@@ -1,0 +1,20 @@
+@use '../../abstracts/mixins' as *;
+@use '../../abstracts/colors' as *;
+
+.newsDtl-relativeNews {
+    contain: paint;
+
+    padding-block: 10rem 11.2rem;
+
+    &-title {
+        grid-column: 1/-1;
+    }
+
+    &-list {
+        --grid-column: 3;
+
+        grid-column: 1/-1;
+
+        margin-top: 8rem;
+    }
+}

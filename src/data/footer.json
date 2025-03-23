@@ -1,0 +1,28 @@
+{
+    "footer": {
+        "social": [
+            {
+                "platform": "Facebook",
+                "url": "/"
+            },
+            {
+                "platform": "Twitters",
+                "url": "/"
+            }
+        ],
+        "email": "duyquang@ducproaudio.com",
+        "phone": [
+            {
+                "label": "Hotline",
+                "number": "(+84) 28 5411 7774"
+            },
+            {
+                "label": "Mobile",
+                "number": "(+84) 932 839 839"
+            }
+        ],
+        "address": [
+            "197 Tôn Dật Tiên, KP The Panorama, Tân Phong Ward, District 7, HCMC"
+        ]
+    }
+}

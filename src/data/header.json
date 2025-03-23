@@ -1,0 +1,52 @@
+{
+    "header": {
+        "navItems": [
+            {
+                "title": "Portfolio",
+                "url": "/portfolio"
+            },
+            {
+                "title": "Products",
+                "url": "/product",
+                "sub": [
+                    {
+                        "title": "Martin Audio",
+                        "category": "martin"
+                    },
+                    {
+                        "title": "Optimal Audio",
+                        "category": "optimal"
+                    },
+                    {
+                        "title": "Tasker Cables",
+                        "category": "cable"
+                    },
+                    {
+                        "title": "Drawmer",
+                        "category": "drawmer"
+                    },
+                    {
+                        "title": "FFA",
+                        "category": "ffa"
+                    },
+                    {
+                        "title": "NST",
+                        "category": "nst"
+                    }
+                ]
+            },
+            {
+                "title": "About",
+                "url": "/about"
+            },
+            {
+                "title": "Support",
+                "url": "/support"
+            },
+            {
+                "title": "News",
+                "url": "/news"
+            }
+        ]
+    }
+}

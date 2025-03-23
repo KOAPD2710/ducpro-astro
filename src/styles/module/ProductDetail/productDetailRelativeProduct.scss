@@ -1,0 +1,20 @@
+@use '../../abstracts/mixins' as *;
+@use '../../abstracts/colors' as *;
+
+.prodDtl-relativeProd {
+    contain: paint;
+
+    padding-bottom: 14rem;
+
+    &-title {
+        grid-column: 1/-1;
+
+        margin-bottom: 8rem;
+    }
+
+    &-list {
+        --grid-column: 4;
+
+        grid-column: 1/-1;
+    }
+}

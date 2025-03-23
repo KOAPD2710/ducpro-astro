@@ -1,0 +1,69 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/colors' as *;
+
+
+button, .btn {
+    appearance: none;
+    background-color: transparent;
+    color: inherit;
+    outline: none;
+    border: none;
+    cursor: pointer;
+
+    * {
+        pointer-events: none;
+    }
+}
+
+.btn {
+    position: relative;
+    @include size(fit-content);
+
+    padding: .8rem 2.4rem .6rem;
+
+    border-radius: 100vmax;
+
+    &-stroke {
+        overflow: hidden;
+
+        &::before{
+            content: '';
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            @include size(100%, 100%);
+            
+            border-width: 1px;
+            border-style: solid;
+            border-color: inherit;
+            border-radius: inherit;
+
+            opacity: .15;
+        }
+
+        &.btn-dark::before {
+            border-color: var(--cl-black);
+        }
+        &.btn-light::before {
+            border-color: var(--cl-white);
+        }
+    }
+
+    &-fill {
+
+        &.btn-dark {
+            background-color: var(--cl-black);
+            color: var(--cl-white);
+        }
+        &.btn-light {
+            background-color: var(--cl-white);
+            color: var(--cl-black);
+        }
+    }
+
+    @include hover {
+        
+    }
+}

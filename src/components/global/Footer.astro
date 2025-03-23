@@ -1,0 +1,77 @@
+---
+import headerData from "@/data/header.json";
+import footerData from "@/data/footer.json";
+
+import Logo from "/public/svgs/logo.svg";
+import ArrowDr from "/public/svgs/arrow-dr.svg";
+
+const { navItems } = headerData.header;
+const { email, phone, address, social } = footerData.footer;
+
+---
+
+<footer class="footer">
+    <div class="container grid">
+        <a href="/" class="footer-logo">
+            <div class="footer-logo-ic ic">
+                <Logo fill="currentColor" />
+            </div>
+        </a>
+        <div class="footer-time">
+            <div class="footer-time-dot"></div>
+            <div class="footer-time-inner txt-14 txt-up">
+                HCMC, <span>12:04</span>
+            </div>
+        </div>
+        <a href={`mailto:${email}`} class="footer-email h4">
+            <div class="footer-email-ic ic">
+                <ArrowDr fill="currentColor" />
+            </div>
+            {email}
+        </a>
+        <div class="footer-navi footer_link">
+            <div class="footer-navi-label footer_link_label txt-14 txt-up">navigtion</div>
+            <div class="footer-navi-list footer_link_list">
+                <a href="/" class="footer-navi-item">Home</a>
+                {navItems.map(item => (
+                    <a href={item.url} class="footer-navi-item">{item.title}</a>
+                ))}
+            </div>
+        </div>
+        <div class="footer-phone footer_link">
+            <div class="footer-phone-label footer_link_label txt-14 txt-up">Phone</div>
+            <div class="footer-phone-list footer_link_list">
+                {phone.map(item => (
+                    <div class="footer-phone-item">
+                        <div class="footer-phone-item-label txt-14">{item.label}</div>
+                        <a href={`phone:${item.number}`} class="footer-phone-item-inner">{item.number}</a>
+                    </div>
+                ))}
+            </div>
+        </div>
+        <div class="footer-address footer_link">
+            <div class="footer-address-label footer_link_label txt-14 txt-up">Address</div>
+            <div class="footer-address-list footer_link_list">
+                {address.map(item => (
+                    <div class="footer-address-item">{item}</div>
+                ))}
+            </div>
+        </div>
+        <div class="footer-social footer_link">
+            <div class="footer-social-label footer_link_label txt-14 txt-up">Follow us</div>
+            <div class="footer-social-list">
+                {social.map((item, index) => (
+                    <>
+                        {index > 0 && (
+                            <div class="footer-social-item slash">/</div>
+                        )}
+                        <a href={item.url} class="footer-social-item">{item.platform}</a>
+                    </>
+                ))}
+            </div>
+        </div>
+        <div class="footer-copy txt-14">
+            Copyright © 2024 Ducpro Audio
+        </div>
+    </div>
+</footer>

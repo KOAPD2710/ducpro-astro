@@ -1,0 +1,100 @@
+@use '../../abstracts/mixins' as *;
+@use '../../abstracts/colors' as *;
+
+.home-app {
+    --sticky-pos: 20rem;
+    --sticky-gap: 9.6rem;
+
+    contain: paint;
+
+    padding-block: 9rem 0rem;
+
+    margin-bottom: -30rem;
+
+    &-label {
+        grid-column: 2/4;
+
+        width: fit-content;
+
+        margin-bottom: 4rem;
+    }
+
+    &-title {
+        grid-column: 2/6;
+    }
+
+    &-desc {
+        grid-column: 5/9;
+    }
+
+    &-list {
+        grid-column: 1/-1;
+
+        margin-inline: calc(var(--container-padding) * -1);
+        margin-top: 10rem;
+    }
+
+    &-item {
+        position: relative;
+
+        align-items: center;
+
+        padding-top: 2.8rem;
+
+        background-color: var(--cl-white);
+
+        position: sticky;
+
+        $length: 4;
+
+        @for $i from 1 through $length {
+            &:nth-child(#{$i}) {
+                top: calc(var(--sticky-pos) + var(--sticky-gap) * #{$i - 1});
+                padding-bottom: calc(var(--sticky-gap) * #{$length - $i});
+
+                @if $i == 1 {
+                    margin-top: 0;
+                } @else {
+                    margin-top: calc(-1 * var(--sticky-gap) * #{$length - $i + 1});
+                }
+            }
+        }
+
+        .line {
+            top: 0;
+
+            // position: relative;
+            // grid-column: 1/-1;
+        }
+
+        &-dot {
+            @include size(1.2rem);
+            background-color: currentColor;
+            border-radius: 100vmax;
+        }
+
+        &-title {
+            grid-column: 5/9;
+        }
+
+        &-desc {
+            grid-column: 9/-1;
+
+            opacity: .7;
+        }
+
+        &-img {
+            grid-column: 1/-1;
+
+            margin-inline: calc(var(--container-padding) * -1);
+            // height: calc(100svh - 21.6rem);
+            
+            margin-top: 4rem;
+            aspect-ratio: 2.5411764706;
+
+            background-color: blue;
+
+            overflow: hidden;
+        }
+    }
+}
