@@ -1,0 +1,39 @@
+---
+import Layout from "@layouts/layout.astro";
+const locale = Astro.currentLocale || 'en';
+// Get query parameters (from the URL query string after ?)
+
+const { slug } = Astro.params;
+
+const templates = import.meta.glob('/src/templates/*.astro');
+const templatePath = `/src/templates/${slug}.astro`;
+let TemplateComponent = templates[templatePath];
+
+// If the requested template doesn't exist, fall back to the default "page" template
+if (!TemplateComponent) {
+    const defaultTemplatePath = `/src/templates/page.astro`;
+    TemplateComponent = templates[defaultTemplatePath];
+    
+    if (!TemplateComponent) {
+        // If even the default template doesn't exist, return an error
+        return new Response('Default template not found', { status: 404 });
+    }
+    
+    console.log(`Template for "${slug}" not found, falling back to default page template`);
+}
+
+const Template = await TemplateComponent();
+
+const data = {
+    "data": "data"
+}
+// console.log('layoutTemplate', layoutTemplate.name);
+
+// console.log(template[`/src/templates/${slug}.astro`])
+
+console.log('slug', slug);
+---
+
+<Layout title={slug} name_space={slug} lang={locale}>
+    <Template.default data={data} slug={slug}/>
+</Layout>

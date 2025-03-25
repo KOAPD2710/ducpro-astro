@@ -1,0 +1,45 @@
+---
+import ArrowDown from 'public/svgs/arrow-d.svg';
+import Facebook from 'public/svgs/facebook.svg';
+---
+
+
+<section class="home-hero" data-theme="dark">
+    <div class="container grid">
+        <div class="home-hero-bg">
+            <div class="home-hero-bg-inner">
+                <video class="home-hero-bg_inner img img-fill" loop autoplay muted>
+                    <source src="/videos/homeHero.mp4" type="video/mp4">
+                </video>
+                <!-- {# {% include '../../components/image/image.twig' with {
+                    src: '/images/home_port.webp',
+                    alt: 'Home hero image',
+                    class: 'home-hero-bg_inner img img-fill',
+                    loading: 'lazy'
+                } %} #} -->
+            </div>
+        </div>
+        <div class="home-hero-label-wrapper">
+            <div class="home-hero-label txt-14">We Provide</div>
+            <div class="home-hero-label-line line line-hor"></div>
+        </div>
+        <h1 class="home-hero-title h01">Genuine sound delivering remarkable experiences</h1>
+        <div class="home-hero-desc">Exclusive distributor of Martin Audio since 1992, delivering precision sound for every space.</div>
+        <div class="home-hero-hint">
+            <div class="home-hero-hint-inner">
+                <div class="home-hero-hint-ic ic">
+                    <ArrowDown/>
+                </div>
+                <div class="home-hero-hint-ic ic">
+                    <ArrowDown/>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="home-hero-social btn btn-stroke">
+            <div class="home-hero-social-inner ic">
+                <Facebook/>
+            </div>
+        </a>
+        <div class="home-hero-overlay"></div>
+    </div>
+</section>

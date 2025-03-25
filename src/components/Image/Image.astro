@@ -7,8 +7,8 @@ const {
     alt,
     class: imgClass="",
     lazy = false,
-    ...rest
+    ...attrs
 } = Astro.props;
 ---
 
-<AstroImage src={src || ""} alt={alt || "Image"} class={cn("img", imgClass)} loading={lazy && "lazy"} inferSize={true}/>
+<AstroImage src={src || ""} alt={alt || "Image"} class={cn("img", imgClass)} loading={lazy && "lazy"} inferSize={true} {...attrs}/>

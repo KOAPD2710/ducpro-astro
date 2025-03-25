@@ -1,0 +1,12 @@
+---
+import type { GetStaticPaths } from "astro";
+import Layout from "@layouts/layout.astro";
+import HomeHero from "@components/home/HeroComponent.astro";
+
+const { locale } = Astro.params;
+
+const { slug } = Astro.params;
+---
+<Layout title="Homepage" name_space="home" lang={locale}>
+    <HomeHero/>
+</Layout>

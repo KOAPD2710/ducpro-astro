@@ -1,0 +1,31 @@
+---
+import type { GetStaticPaths } from "astro";
+import { defineConfig } from 'astro/config';
+
+export const getStaticPaths = async () => {
+  // Import config dynamically (needed for SSG)
+  const { default: config } = await import('../../astro.config.mjs');
+  
+  const supportedLocales = config.i18n.supportedLocales;
+  const defaultLocale = config.i18n.defaultLocale;
+  
+  return supportedLocales.map(locale => ({
+    params: { locale }
+  }));
+}
+
+// Get the locale from URL
+const { locale } = Astro.params;
+
+// Import config for runtime use
+const { default: config } = await import('../../astro.config.mjs');
+const supportedLocales = config.i18n.supportedLocales;
+const defaultLocale = config.i18n.defaultLocale;
+
+// Check if the locale exists in supported locales
+if (locale && !supportedLocales.includes(locale)) {
+  // Redirect to the default locale if the requested locale is not supported
+  return Astro.redirect(`/${defaultLocale}`);
+}
+
+---

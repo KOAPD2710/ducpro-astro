@@ -4,10 +4,11 @@ import Logo from "/public/svgs/logo.svg";
 
 const { navItems } = headerData.header;
 
+const { lang } = Astro.props;
 ---
 <header class="header">
     <div class="container grid">
-        <a href="/" class="header-logo">
+        <a href={`/${lang}`} class="header-logo">
             <div class="header-logo-ic ic">
 				<Logo fill="currentColor" />
             </div>
@@ -19,7 +20,7 @@ const { navItems } = headerData.header;
                         class={`header-nav_list__item ${item.sub ? 'sub' : ''}`}
                         data-header="navi_item">
                         <a
-                            href={item.url}
+                            href={`/${lang}${item.url}`}
                             class="header-nav_list__item__link link txt-up txt-14"
                             data-header="navi_link"
                             data-barba-prevent
@@ -39,7 +40,7 @@ const { navItems } = headerData.header;
                             <div class="header-nav_list__item__sub" data-header="navi_menu_sub">
                                 <div class="header-nav_list__item__sub__inner">
                                     {item.sub.map(sub => (
-                                        <a href={`/product?brand=${sub.category}`}
+                                        <a href={`/${lang}/product?brand=${sub.category}`}
                                             class="header-nav_list__item__sub__link link txt-12"
                                             data-header="navi_menu_sub_link">
                                             {sub.title}
@@ -58,7 +59,7 @@ const { navItems } = headerData.header;
                     <div class="header-nav_sub_product" data-header="navi_sub_product">
                         {navItems.map(item => 
                             item.sub?.map(sub => (
-                                <a href={`/product?brand=${sub.category}`} 
+                                <a href={`/${lang}/product?brand=${sub.category}`} 
                                    class="header-nav_sub_product_item link" 
                                    data-header="navi_sub_item">
                                     {sub.title}

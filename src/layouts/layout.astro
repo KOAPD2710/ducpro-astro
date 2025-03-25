@@ -8,31 +8,31 @@ import Loading from "@components/global/Loading.astro";
 import GridDebugger from "@components/debug/GridDebugger.astro";
 
 const {
-	title,
-	data_page,
-    name_space
+    title,
+    data_page,
+    name_space,
+    lang
 } = Astro.props;
-
 ---
 
 <html lang="en">
     <BaseHead title={title} description={data_page?.description || "Default description"} />
-	<body data-barba="wrapper">
+    <body data-barba="wrapper">
         <Loading/>
-        <Header/>
+        <Header lang={lang}/>
         <div class="page-container loading">
             <main class="main" data-barba="container" data-barba-namespace={name_space || "notSetWillBeSuck"}>
                 <slot />
-                <Footer/>
+                <Footer lang={lang}/>
                 <div class="page-curtain"></div>
             </main>
         </div>
-        <GridDebugger/>
+        {import.meta.env.DEV && <GridDebugger/>}
 
         <script>
-			import main from "@/scripts/main.js";
+            import main from "@/scripts/main.js";
 
             window.onload = () => main();
-		</script>
-	</body>
+        </script>
+    </body>
 </html>

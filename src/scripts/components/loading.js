@@ -16,7 +16,7 @@ const loadingAnimation = async (data) => {
 		number: new SplitText(number, typeOpts.chars),
 	}
 
-	const fetchURL = `${window.location.origin}/product`;
+	const fetchURL = `${window.location.origin}/en/product`;
 
 	const tl = gsap.timeline();
 

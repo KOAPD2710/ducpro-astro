@@ -1,0 +1,38 @@
+---
+import newsData from "@data/news.json";
+// import Image from "@components/Image/Image.astro";
+import { Image } from "astro:assets";
+const list = newsData.news.list;
+const renderList = list.slice(0, 3);
+// import image from '../../assets/images/news-4.webp'
+
+const localImages = import.meta.glob('/src/assets/images/*.{jpeg,jpg,png,gif,webp}');
+// console.log(localImages)
+---
+
+<section class="home-news">
+    <div class="container grid">
+        <div class="home-news-label txt-14">Latest Updates</div>
+        <h1 class="home-news-title h2">Stay Connected with Sound</h1>
+        <a href="/news" class="home-news-cta btn btn-fill btn-dark txt-14">See All News</a>
+        <div class="home-news-line line line-hor"></div>
+        <div class="home-news-list">
+            {renderList.map(item => (
+                <a href="#" class="home-news-list-item">
+                    <div class="home-news-list-item-img">
+                        {/* {console.log(localImages[`/src${item.image}`]()) } */}
+                        {localImages[`/src${item.image}`] && (
+                            <Image 
+                                src={localImages[`/src${item.image}`]()} 
+                                alt={item.title || "News Image"} 
+                                class="img-fill" 
+                            />
+                        )}
+                    </div>
+                    <div class="home-news-list-item-title txt-20">{item.title}</div>
+                    <div class="home-news-list-item-btn btn btn-stroke btn-dark txt-14 txt-med">Read More</div>
+                </a>
+            ))}
+        </div>
+    </div>
+</section>

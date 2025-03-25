@@ -1,0 +1,11 @@
+---
+import Layout from "@layouts/layout.astro";
+import HomeHero from "@components/home/HeroComponent.astro";
+import HomeNews from "@components/home/NewsComponent.astro";
+
+const locale = Astro.currentLocale || 'en';
+---
+<Layout title="Homepage" name_space="home" lang={locale}>
+  <HomeHero/>
+  <HomeNews/>
+</Layout>

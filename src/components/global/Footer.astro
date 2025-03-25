@@ -5,14 +5,16 @@ import footerData from "@/data/footer.json";
 import Logo from "/public/svgs/logo.svg";
 import ArrowDr from "/public/svgs/arrow-dr.svg";
 
-const { navItems } = headerData.header;
-const { email, phone, address, social } = footerData.footer;
+const { lang } = Astro.props;
 
+const { navItems } = headerData.header;
+
+const { email, phone, address, social } = footerData.footer;
 ---
 
 <footer class="footer">
     <div class="container grid">
-        <a href="/" class="footer-logo">
+        <a href={`/${lang}`} class="footer-logo">
             <div class="footer-logo-ic ic">
                 <Logo fill="currentColor" />
             </div>
@@ -34,7 +36,7 @@ const { email, phone, address, social } = footerData.footer;
             <div class="footer-navi-list footer_link_list">
                 <a href="/" class="footer-navi-item">Home</a>
                 {navItems.map(item => (
-                    <a href={item.url} class="footer-navi-item">{item.title}</a>
+                    <a href={`/${lang}${item.url}`} class="footer-navi-item">{item.title}</a>
                 ))}
             </div>
         </div>

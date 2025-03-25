@@ -74,7 +74,7 @@ const initPageScripts = () => {
 		}
 	}
 
-	barba.use(barbaPrefetch);
+	// barba.use(barbaPrefetch);
 	barba.init({
 		debug: true,
 		prefetch: true,
